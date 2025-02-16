@@ -36,7 +36,7 @@ public class ReportGenerator {
         LocalDateTime completionDate = TrainingProgramCalculator.calculateCompletionDate(
                 student.getStartDateTime(), student.getCurriculum().getTotalDuration());
 
-        System.out.println("com.griddynamics.model.Student: " + student.getName());
+        System.out.println("Student: " + student.getName());
         System.out.println("Program: " + student.getCurriculum().getProgramName());
         System.out.println("Working Hours: " + WorkingTimeUtils.WORK_START + " - " + WorkingTimeUtils.WORK_END);
         System.out.println("Total Duration: " + student.getCurriculum().getTotalDuration() + " hours");

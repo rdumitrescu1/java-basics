@@ -1,3 +1,4 @@
+import com.griddynamics.service.TrainingProgramCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

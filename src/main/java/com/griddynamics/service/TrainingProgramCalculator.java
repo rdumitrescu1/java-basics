@@ -1,3 +1,7 @@
+package com.griddynamics.service;
+
+import com.griddynamics.util.WorkingTimeUtils;
+
 import java.time.LocalDateTime;
 
 public class TrainingProgramCalculator {

@@ -1,3 +1,5 @@
+package com.griddynamics.model;
+
 import java.time.LocalDateTime;
 
 public class Student {

@@ -1,3 +1,4 @@
+package com.griddynamics.model;
 
 public class Course {
 

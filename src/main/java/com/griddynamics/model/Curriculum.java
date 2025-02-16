@@ -1,3 +1,5 @@
+package com.griddynamics.model;
+
 import java.util.List;
 
 public class Curriculum {

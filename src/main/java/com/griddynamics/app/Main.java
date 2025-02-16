@@ -1,3 +1,10 @@
+package com.griddynamics.app;
+
+import com.griddynamics.model.Course;
+import com.griddynamics.model.Curriculum;
+import com.griddynamics.model.Student;
+import com.griddynamics.report.ReportGenerator;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;

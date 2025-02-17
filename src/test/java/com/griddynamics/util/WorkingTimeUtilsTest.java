@@ -18,19 +18,19 @@ class WorkingTimeUtilsTest {
             "2025-02-10T17:00, 1",
             "2025-02-10T17:59, 0"
     })
-    void shouldReturnRemainingWorkHours(String dataTime, long expectedRemainingHours) {
-        LocalDateTime dateTime = LocalDateTime.parse(dataTime);
+    void shouldReturnRemainingWorkHours(String dateTimeStr, long expectedRemainingHours) {
+        LocalDateTime dateTime = LocalDateTime.parse(dateTimeStr);
         long remainingWorkHours = WorkingTimeUtils.getRemainingWorkHours(dateTime);
         assertEquals(expectedRemainingHours, remainingWorkHours);
     }
     @Test
     void shouldReturnNextWorkingDay() {
-        LocalDateTime dateTime = LocalDateTime.of(2025, 2, 10, 18, 0);
+        LocalDateTime dateTime = LocalDateTime.of(2025, 2, 14, 18, 0);
         LocalDateTime nextWorkingDay = WorkingTimeUtils.nextWorkingDay(dateTime);
-        assertEquals(LocalDateTime.of(2025, 2, 11, 10, 0), nextWorkingDay);
+        assertEquals(LocalDateTime.of(2025, 2, 17, 10, 0), nextWorkingDay);
     }
     @Test
-    void testGetRemainingWorkHours_withNullInput() {
+    void shouldThrowNullPointerException_when_NullInput() {
         Executable executable = () -> WorkingTimeUtils.getRemainingWorkHours(null);
         assertThrows(NullPointerException.class, executable);
 

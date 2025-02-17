@@ -8,6 +8,7 @@ import com.griddynamics.report.ReportGenerator;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Main {
         Course jdbcCourse = new Course("JDBC", 24);
         Course springCourse = new Course("Spring", 16);
         Curriculum javaCurriculum = new Curriculum("Java Developer",
-                Arrays.asList(javaCourse, jdbcCourse, springCourse));
+                List.of(javaCourse, jdbcCourse, springCourse));
         Student student1 = new Student("Ivanov Ivan", javaCurriculum,
                 LocalDateTime.of(2025, 2, 10, 10, 0));
 
@@ -27,7 +28,7 @@ public class Main {
         Course pageObject = new Course("Page Object", 16);
         Course selenium = new Course("Selenium", 16);
         Curriculum aqeCurriculum = new Curriculum("AQE",
-                Arrays.asList(testDesign, pageObject, selenium));
+                List.of(testDesign, pageObject, selenium));
         Student student2 = new Student("Sidorov Ivan", aqeCurriculum,
                 LocalDateTime.of(2025, 2, 10, 10, 0));
 

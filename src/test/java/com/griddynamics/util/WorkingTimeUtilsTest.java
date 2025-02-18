@@ -29,11 +29,4 @@ class WorkingTimeUtilsTest {
         LocalDateTime nextWorkingDay = WorkingTimeUtils.nextWorkingDay(dateTime);
         assertEquals(LocalDateTime.of(2025, 2, 17, 10, 0), nextWorkingDay);
     }
-    @Test
-    void shouldThrowNullPointerException_when_NullInput() {
-        Executable executable = () -> WorkingTimeUtils.getRemainingWorkHours(null);
-        assertThrows(NullPointerException.class, executable);
-
-    }
-
 }

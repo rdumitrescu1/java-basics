@@ -5,7 +5,12 @@ import com.griddynamics.util.WorkingTimeUtils;
 import java.time.LocalDateTime;
 
 public class TrainingProgramCalculator {
-    public static LocalDateTime calculateCompletionDate(LocalDateTime startDateTime, int totalTrainingHours) {
+
+
+    public LocalDateTime calculateCompletionDate(LocalDateTime startDateTime, int totalTrainingHours) {
+
+        if (totalTrainingHours < 0) throw new IllegalArgumentException("Total training hours cannot be negative");
+
         LocalDateTime current = startDateTime;
         int remainingHours = totalTrainingHours;
 

@@ -4,6 +4,7 @@ import com.griddynamics.model.Course;
 import com.griddynamics.model.Curriculum;
 import com.griddynamics.model.Student;
 import com.griddynamics.report.ReportGenerator;
+import com.griddynamics.service.TrainingProgramCalculator;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        LocalDateTime reportDateTime = LocalDateTime.of(2025, 2, 18, 15, 0);
+        LocalDateTime reportDateTime = LocalDateTime.of(2025, 2, 17, 15, 0);
 
         int reportType = 0;
 
@@ -43,17 +44,18 @@ public class Main {
         Student student2 = new Student("Sidorov Ivan", aqeCurriculum,
                 LocalDateTime.of(2025, 2, 10, 10, 0));
 
+        ReportGenerator report = new ReportGenerator(new TrainingProgramCalculator());
         if (reportType == 0) {
             System.out.println("Short Report (Generated on: " +
                     reportDateTime.format(DateTimeFormatter.ofPattern("d MMMM yyyy, EEEE, HH:mm")) + "):");
-            ReportGenerator.generateShortReport(student1, reportDateTime);
-            ReportGenerator.generateShortReport(student2, reportDateTime);
+            report.generateShortReport(student1, reportDateTime);
+            report.generateShortReport(student2, reportDateTime);
         } else {
             System.out.println("Full Report (Generated on: " +
                     reportDateTime.format(DateTimeFormatter.ofPattern("d MMMM yyyy, EEEE, HH:mm")) + "):");
-            ReportGenerator.generateFullReport(student1, reportDateTime);
+            report.generateFullReport(student1, reportDateTime);
             System.out.println();
-            ReportGenerator.generateFullReport(student2, reportDateTime);
+            report.generateFullReport(student2, reportDateTime);
         }
     }
 }

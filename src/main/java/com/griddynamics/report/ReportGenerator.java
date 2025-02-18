@@ -10,10 +10,15 @@ import java.time.format.DateTimeFormatter;
 
 public class ReportGenerator {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("d MMMM yyyy, EEEE, HH:mm");
+    private final TrainingProgramCalculator trainingProgramCalculator;
 
-    public static void generateShortReport(Student student, LocalDateTime reportDateTime) {
+    public ReportGenerator(TrainingProgramCalculator trainingProgramCalculator) {
+        this.trainingProgramCalculator = trainingProgramCalculator;
+    }
 
-        LocalDateTime completionDate = TrainingProgramCalculator.calculateCompletionDate(
+    public void generateShortReport(Student student, LocalDateTime reportDateTime) {
+
+        LocalDateTime completionDate = trainingProgramCalculator.calculateCompletionDate(
                 student.getStartDateTime(), student.getCurriculum().getTotalDuration());
 
         System.out.print(student.getName() + " (" + student.getCurriculum().getProgramName() + ") - ");
@@ -31,9 +36,9 @@ public class ReportGenerator {
         }
     }
 
-    public static void generateFullReport(Student student, LocalDateTime reportDateTime) {
+    public void generateFullReport(Student student, LocalDateTime reportDateTime) {
 
-        LocalDateTime completionDate = TrainingProgramCalculator.calculateCompletionDate(
+        LocalDateTime completionDate = trainingProgramCalculator.calculateCompletionDate(
                 student.getStartDateTime(), student.getCurriculum().getTotalDuration());
 
         System.out.println("Student: " + student.getName());

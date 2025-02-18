@@ -7,14 +7,25 @@ import com.griddynamics.report.ReportGenerator;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        LocalDateTime reportDateTime = LocalDateTime.of(2025, 2, 17, 15, 0);;
+        LocalDateTime reportDateTime = LocalDateTime.of(2025, 2, 18, 15, 0);
+
         int reportType = 0;
+
+//        Scanner scanner = new Scanner(System.in);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy, HH:mm");
+//        System.out.println("Enter report date/time (e.g., '17 February 2025, 15:00'):");
+//        String dateInput = scanner.nextLine();
+//        LocalDateTime reportDateTimeInput;
+//        reportDateTimeInput = LocalDateTime.parse(dateInput, formatter);
+//
+//        System.out.println("Enter report type (0 for short report, any other number for full report):");
+//        int reportTypeInput = Integer.parseInt(scanner.nextLine());
 
         Course javaCourse = new Course("Java", 16);
         Course jdbcCourse = new Course("JDBC", 24);
